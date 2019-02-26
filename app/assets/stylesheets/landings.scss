@@ -1,0 +1,33 @@
+// Place all the styles related to the landings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.logo{
+  font-family: 'Indie Flower', cursive;
+  font-size: 700%;
+  text-align: center;
+  color: #1EE613;
+}
+
+#explainer{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 200%;
+  text-align: center;
+}
+
+.account{
+  display: inline-block;
+  font-family: 'Shadows Into Light', cursive;
+  color: #1EE613;
+  text-align: center;
+  font-size: 200%;
+  margin: auto;
+  padding-left:22%;
+  padding-right: 22%;
+  text-decoration: none;
+}
+
+.account:hover{
+  text-decoration: underline;
+}
