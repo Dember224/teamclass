@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div class="logo">
+    TeamClass
+  </div>
+  <div class="signup_fields">
+    <%= form_for @user do |user| %>
+
+      <p>Email: <%= user.email_field :email %></p>
+      <p>
+        First name: <%= user.text_field :first_name %>
+        Last name: <%= user.text_field :last_name %>
+      </p>
+      <p>Im a: <%= user.select :user_type, ['student', 'instructor'] %></p>
+      <p>Password: <%= user.password_field :password_digest %>
+
+      <p>  <%= user.submit "Let's get started", :class => 'submit_button' %></p>
+
+  <% end %>
+
+  </div>
+
+</body>
+
+</html>

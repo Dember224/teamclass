@@ -1,0 +1,25 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.signup_fields{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 150%;
+  margin: auto;
+  text-align: center;
+}
+
+.submit_button {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 150%;
+  background-color: #1EE613;
+  color: white;
+  border-radius: 10%;
+}
+
+.submit_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #1EE613;
+  border-color: #1EE613;
+border-width: medium;
+}
