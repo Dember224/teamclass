@@ -6,15 +6,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if User.save
-      redirects_to '/groups'
+    if @user.save
+      redirect_to '/teams'
     end
   end
 
 private
 
 def user_params
-  params.require(user).permit(:email, :first_name, :last_name, :password_digest, :user_type)
+  params.require(:user).permit(:email, :first_name, :last_name, :password_digest, :user_type)
 end
 
 end
