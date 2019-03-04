@@ -16,7 +16,7 @@
         Last name: <%= user.text_field :last_name %>
       </p>
       <p>Im a(n): <%= user.select :user_type, ['student', 'instructor'] %></p>
-      <p>Password: <%= user.password_field :password_digest %>
+      <p>Password: <%= user.password_field :password %>
 
       <p>  <%= user.submit "Let's get started", :class => 'submit_button' %></p>
 
