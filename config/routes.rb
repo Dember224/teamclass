@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :users
   get '/signup' => 'users#new'
   post 'signup' => 'users#create'
+  get 'users' => 'teams#index'
   get '/teams' => 'teams#index'
+  post '/teams' => 'teams#index'
 end
