@@ -4,8 +4,7 @@ class CreateTeams < ActiveRecord::Migration[5.1]
 
       t.timestamps
       t.string :team_name
-      t.belongs_to :user
-      t.belongs_to :team_member
+
     end
   end
 end

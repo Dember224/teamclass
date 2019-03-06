@@ -18,25 +18,16 @@ ActiveRecord::Schema.define(version: 20190302100738) do
   create_table "team_members", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "instructor"
-    t.integer "member1"
-    t.integer "member2"
-    t.integer "member3"
-    t.integer "member4"
-    t.integer "member5"
-    t.integer "member6"
-    t.integer "member7"
-    t.integer "member8"
+    t.bigint "team_id"
+    t.bigint "user_id"
+    t.index ["team_id"], name: "index_team_members_on_team_id"
+    t.index ["user_id"], name: "index_team_members_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "team_name"
-    t.bigint "user_id"
-    t.bigint "team_member_id"
-    t.index ["team_member_id"], name: "index_teams_on_team_member_id"
-    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
