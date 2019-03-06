@@ -3,7 +3,7 @@
 <head></head>
 <body>
 
-  <%= form_tag('/teams', method: :get) do %>
+  <%= form_tag('/team_members', method: :get) do %>
     Email <%= text_field_tag :email, params[:email] %>
     <%= submit_tag 'Search', name: nil %>
   <% end %>

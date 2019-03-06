@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <%= form_for @team do |team| %>
+    Team Name: <%= team.text_field :team_name %>
+    <%= team.submit "Create Team" %>
+  <% end %>
+</body>
+</html>

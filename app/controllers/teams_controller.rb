@@ -1,16 +1,24 @@
 class TeamsController < ApplicationController
 
-  def index
-    if params[:email]
-      @user = User.find_by_email(params[:email])
-    else
-      @user = false
+
+  def new
+    @team = Team.new
+  end
+
+  def create
+    @team = Team.new(team_params)
+    if @team.save
+      session[:team_id] = @team.id
+      redirect_to '/team_members'
     end
+
   end
 
   private
 
-  def email_params
-    params.require(:user).permit(:email)
+
+  def team_params
+    params.require(:team).permit(:team_name)
   end
+
 end
