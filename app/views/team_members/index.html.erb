@@ -13,7 +13,14 @@
       We're sorry, we don't have any users with that email address
     <% else %>
       <!-- The match form for adding to teams will go here -->
-      <%= @user.first_name %>
+      <%= @user.first_name %> <%= @user.last_name %>
+
+      <%= form_for @team_member do |member| %>
+        <%= member.hidden_field :user_id, :value => @user.id %>
+        <%= member.hidden_field :team_id, :value => @team_id %>
+        <%= member.submit "Add Team Member" %>
+      <% end %>
+
     <% end %>
   <% else %>
     Enter the email of the user you'd like to find.

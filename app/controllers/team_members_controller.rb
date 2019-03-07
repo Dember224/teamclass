@@ -6,9 +6,12 @@ class TeamMembersController < ApplicationController
 
   def create
     @team_member = TeamMember.new(team_member_params)
+    redirect_to '/team_members'
   end
 
   def index
+    @team_member = TeamMember.new
+    @team_id = Team.find_by_id(session[:team_id]).id
     if params[:email]
       @user = User.find_by_email(params[:email])
     else
