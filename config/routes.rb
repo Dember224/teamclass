@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post 'teams' => 'teams#create'
   get '/team_members' => 'team_members#index'
   post 'team_members' => 'team_members#create'
+  get '/login' => 'sessions#new'
+  post 'login' => 'sessions#create'
 end

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+
+<body>
+  <%= form_for(:session, url: login_path) do |user| %>
+    <%= user.email_field :email, :placeholder => 'Email', :required => true %>
+    <%= user.password_field :password, :placeholder => 'password', :required => true %>
+
+    <%= user.submit "Login" %>
+
+  <% end %>
+</body>
+</html>
