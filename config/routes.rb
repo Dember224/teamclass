@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post 'team_members' => 'team_members#create'
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 end
