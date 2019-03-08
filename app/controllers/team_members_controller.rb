@@ -5,8 +5,11 @@ class TeamMembersController < ApplicationController
   end
 
   def create
+
     @team_member = TeamMember.new(team_member_params)
-    redirect_to '/team_members'
+    if @team_member.save
+      redirect_to '/team_members'
+    end
   end
 
   def index
@@ -26,6 +29,6 @@ class TeamMembersController < ApplicationController
   end
 
   def team_member_params
-    params.require(:team_member).permit(:team, :user)
+    params.require(:team_member).permit(:team_id, :user_id)
   end
 end

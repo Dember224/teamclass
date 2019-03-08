@@ -7,7 +7,7 @@
     Email <%= text_field_tag :email, params[:email] %>
     <%= submit_tag 'Search', name: nil %>
   <% end %>
-
+  <%= TeamMember.first.user_id %>
   <% if @user != false  %>
     <% if @user == nil %>
       We're sorry, we don't have any users with that email address
