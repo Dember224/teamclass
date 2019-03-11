@@ -3,9 +3,13 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    if session[:user_id]
+      @existing_teams = TeamMember.where("user_id = ?", current_user.id)
+    end
   end
 
   def create
+  
     @team = Team.new(team_params)
     if @team.save
       session[:team_id] = @team.id

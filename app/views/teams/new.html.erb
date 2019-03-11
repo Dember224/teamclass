@@ -7,6 +7,9 @@
     <%= team.submit "Create Team" %>
   <% end %>
 
-  
+<% @existing_teams.each do |team| %>
+  <%= link_to "#{Team.find(team[:team_id]).team_name}", login_path(:id => team[:team_id]), :method => :post %>
+<% end %>
+
 </body>
 </html>

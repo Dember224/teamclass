@@ -2,12 +2,18 @@
 <html>
 <head></head>
 <body>
-
+  Team: <%= @team_name %>
+  Members:
+  <ol>
+    <% @team_member.each do |member| %>
+      <li><%= TeamMember.find_by_team_id(member[:team_id]).user.first_name %><%= TeamMember.find_by_team_id(member[:team_id]).user.last_name %> </li>
+    <% end %>
+  </ol>
   <%= form_tag('/team_members', method: :get) do %>
     Email <%= text_field_tag :email, params[:email] %>
     <%= submit_tag 'Search', name: nil %>
   <% end %>
-  <%= TeamMember.first.user_id %>
+
   <% if @user != false  %>
     <% if @user == nil %>
       We're sorry, we don't have any users with that email address
@@ -23,7 +29,7 @@
 
     <% end %>
   <% else %>
-    Enter the email of the user you'd like to find.
+    Enter the email of the user you'd like to add to this team.
   <% end %>
 
 </body>

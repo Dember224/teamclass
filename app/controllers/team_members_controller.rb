@@ -14,7 +14,10 @@ class TeamMembersController < ApplicationController
 
   def index
     @team_member = TeamMember.new
-    @team_id = Team.find_by_id(session[:team_id]).id
+    @team = Team.find_by_id(session[:team_id])
+    @team_id = @team.id
+    @team_name = @team.team_name
+    @team_member = TeamMember.where("team_id = ?", session[:team_id])
     if params[:email]
       @user = User.find_by_email(params[:email])
     else
