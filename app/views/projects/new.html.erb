@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_for @project do |project| %>
+      <% project.hidden_field :team, :value => @team_id %>
+      <%= project.text_field :project_name %>
+      <%= project.datetime_field :deadline %>
+      <%= project.text_area :project_description %>
+    <% end %>
+  </body>
+</html>
