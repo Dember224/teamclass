@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.timestamps
       t.belongs_to :team
       t.string :project_name
-      t.date_time :deadline
+      t.datetime :deadline
       t.string :project_description
     end
   end
