@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302100738) do
+ActiveRecord::Schema.define(version: 20190312071808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "assignment_deadline"
+    t.string "assignment_description"
+    t.index ["project_id"], name: "index_assignments_on_project_id"
+    t.index ["user_id"], name: "index_assignments_on_user_id"
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.string "material_name"
+    t.string "material_purpose"
+    t.decimal "cost"
+    t.bigint "user_id"
+    t.string "has_or_is_acquiring"
+    t.index ["project_id"], name: "index_materials_on_project_id"
+    t.index ["user_id"], name: "index_materials_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "team_id"
+    t.string "project_name"
+    t.datetime "deadline"
+    t.string "project_description"
+    t.index ["team_id"], name: "index_projects_on_team_id"
+  end
 
   create_table "team_members", force: :cascade do |t|
     t.datetime "created_at", null: false
