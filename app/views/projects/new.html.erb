@@ -6,11 +6,26 @@
     <title></title>
   </head>
   <body>
+    <h1>Project</h1>
     <%= form_for @project do |project| %>
-      <% project.hidden_field :team, :value => @team_id %>
-      <%= project.text_field :project_name %>
-      <%= project.datetime_field :deadline %>
-      <%= project.text_area :project_description %>
+      <% project.hidden_field :team_id, :value => @team_id %>
+      <p>Name this project:
+        <%= project.text_field :project_name %>
+      </p>
+      <p>When is this project due:
+        <%= project.datetime_field :deadline %>
+      </p>
+      <p>Describe the objective of this project:
+        <%= project.text_area :project_description %>
+      </p>
+
+      <%= project.submit "Begin a new project" %>
     <% end %>
+
+    <% @existing_projects.each do |project| %>
+      <%= link_to "#{Project.find(project[:id]).project_name}", login_path(:project_id => project[:id]), :method => :post %>
+    <% end %>
+
+    <%= Project.first.id %>
   </body>
 </html>

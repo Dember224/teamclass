@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
     if params[:id]
       session[:team_id] = params[:id]
       redirect_to '/team_members'
+    elsif params[:project_id]
+      session[:project_id] = params[:project_id]
+      redirect_to '/projects'
     else
       @user = User.find_by_email(params[:session][:email])
       if @user && @user.authenticate(params[:session][:password])
@@ -20,6 +23,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     session[:team_id] = nil
+    session[:project_id]
     redirect_to '/'
   end
 
