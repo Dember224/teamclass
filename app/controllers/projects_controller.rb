@@ -14,8 +14,12 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       session[:project_id] = @project.id
-      redirect_to '/projects'
+      redirect_to '/our_project'
     end
+  end
+
+  def show
+
   end
 
   private

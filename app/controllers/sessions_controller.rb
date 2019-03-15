@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to '/team_members'
     elsif params[:project_id]
       session[:project_id] = params[:project_id]
-      redirect_to '/projects'
+      redirect_to '/our_project'
     else
       @user = User.find_by_email(params[:session][:email])
       if @user && @user.authenticate(params[:session][:password])

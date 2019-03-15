@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   get '/projects' => 'projects#new'
   post 'projects' => 'projects#create'
+  get 'our_project' => 'projects#show'
 end
