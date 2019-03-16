@@ -5,6 +5,18 @@
     <title></title>
   </head>
   <body>
+    <p>Your Team: <%= @my_team_name %></p>
+    <p>Working on the project: <%= @this_project.project_name %></p>
 
+    <p>Your team Members:</p>
+    <ol>
+      <% @squad_member.each do |squad_member| %>
+        <li>
+          <% @this_member = TeamMember.find_by_user_id(squad_member) %>
+          <%= @this_member.user.first_name %>
+          <%= @this_member.user.last_name %>
+        </li>
+      <% end %>
+    </ol>
   </body>
 </html>

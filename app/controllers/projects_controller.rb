@@ -19,7 +19,13 @@ class ProjectsController < ApplicationController
   end
 
   def index
-
+    @this_project = Project.find(session[:project_id])
+    @my_team_name = @this_project.team.team_name
+    @the_squad = TeamMember.where("team_id = ?", @this_project.team_id)
+    @squad_member = []
+    @the_squad.each do |squad_member|
+      @squad_member.push(squad_member[:user_id])
+    end
   end
 
   private
