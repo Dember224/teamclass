@@ -1,4 +1,4 @@
 class Assignment < ApplicationRecord
-  belongs_to :project
-  belongs_to :user
+  belongs_to :project, required: false
+  belongs_to :user, required: false
 end
