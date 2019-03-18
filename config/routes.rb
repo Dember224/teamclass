@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'landings#home'
-  get '/signup' => 'users#new'
-  post 'signup' => 'users#create'
+  resources :users
+  get '/signups' => 'users#new'
+  post 'signups' => 'users#create'
   get '/teams' => 'teams#new'
   post 'teams' => 'teams#create'
   get '/team_members' => 'team_members#index'
