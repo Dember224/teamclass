@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'our_project' => 'projects#index'
   get '/assignments' => 'assignments#new'
   post 'assignments' => 'assignments#create'
+  get '/materials' => 'materials#new'
+  post 'materials' => 'materials#create'
 end

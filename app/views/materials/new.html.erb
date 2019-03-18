@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_for @materials do |material| %>
+      <%= material.hidden_field :project_id, :value => @this_project.id %>
+      <p>Name of the material</p>
+      <%= material.text_field :material_name %>
+      <p>Material's purpose</p>
+      <%= material.text_field :material_purpose %>
+      <p>Cost associated with getting this material (if no cost enter 0)</p>
+      <%= material.number_field :cost, step: :any %>$
+      <!-- enter user select fields here when you return to work -->
+      <p>Team Member responsible for acquiring material</p>
+      <% @member_user_id.each do |user| %>
+        <% @user = User.find(user) %>
+        <%= @user.first_name %> <%= @user.last_name %>
+        <%= material.radio_button(:user_id, user) %>
+      <% end %>
+
+      <%= material.submit "Add this material" %>
+    <% end %>
+  </body>
+</html>
