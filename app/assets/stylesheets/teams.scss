@@ -1,3 +1,32 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.new_team_name{
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.old_team{
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+}
+
+.existing_team_names{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  text-decoration: none;
+  color: #1EE613;
+  border-color: #1EE613;
+  border:solid;
+  padding: .7%;
+  border-radius: 20%;
+  margin: 1%;
+}
+
+.existing_team_names:hover{
+  text-decoration: none;
+  background-color: #1EE613;
+  color: white;
+}

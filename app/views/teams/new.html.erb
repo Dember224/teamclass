@@ -3,13 +3,19 @@
 <head></head>
 <body>
   <%= form_for @team do |team| %>
-    Team Name: <%= team.text_field :team_name %>
-    <%= team.submit "Create Team" %>
+  <h1 class="new_team_name">Create a new team</h1>
+  <div class="new_team_name">
+    New Team Name: <%= team.text_field :team_name %>
+    <%= team.submit "Create Team", :class => "submit_button" %>
   <% end %>
-
-<% @existing_teams.each do |team| %>
-  <%= link_to "#{Team.find(team[:team_id]).team_name}", login_path(:id => team[:team_id]), :method => :post %>
-<% end %>
+  </div>
+<div class="old_team">
+  <h1>Or Choose one of your existing teams to work with</h1>
+  <p>My Teams:</p>
+  <% @existing_teams.each do |team| %>
+    <%= link_to "#{Team.find(team[:team_id]).team_name}", login_path(:id => team[:team_id]), :method => :post, :class => "existing_team_names" %>
+  <% end %>
+</div>
 
 </body>
 </html>
