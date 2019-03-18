@@ -3,12 +3,18 @@
 <head></head>
 
 <body>
-  <%= form_for(:session, url: login_path) do |user| %>
-    <%= user.email_field :email, :placeholder => 'Email', :required => true %>
-    <%= user.password_field :password, :placeholder => 'password', :required => true %>
 
-    <%= user.submit "Login" %>
+  <div class="logo">
+    TeamClass
+  </div>
+  <div class="login_form">
+  <%= form_for(:session, url: login_path) do |user| %>
+    Email: <%= user.email_field :email, :placeholder => 'Email', :required => true, :class => "login_fields" %>
+    Password: <%= user.password_field :password, :placeholder => 'password', :required => true, :class => "login_fields" %>
+
+    <p><%= user.submit "Login", :class => 'submit_button' %></p>
 
   <% end %>
+  </div>
 </body>
 </html>
