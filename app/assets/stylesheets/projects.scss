@@ -1,3 +1,33 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_project{
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
+
+.existing_projects{
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  border: solid;
+  border-color: #1EE613;
+  margin: 3%;
+
+}
+
+.project_links{
+  text-decoration: none;
+  color:black;
+  font-family: 'Shadows Into Light', cursive;
+  border:solid;
+  border-color: #1EE613;
+
+}
+
+.project_links:hover{
+  color: white;
+  background-color: #1EE613;
+}

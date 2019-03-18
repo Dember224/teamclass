@@ -6,8 +6,10 @@
     <title></title>
   </head>
   <body>
-    <h1>Project</h1>
-    <%= form_for @project do |project| %>
+
+    <div class="new_project">
+      <h1>Create A Project</h1>
+      <%= form_for @project do |project| %>
       <% project.hidden_field :team_id, :value => @team_id %>
       <p>Name this project:
         <%= project.text_field :project_name %>
@@ -19,13 +21,15 @@
         <%= project.text_area :project_description %>
       </p>
 
-      <%= project.submit "Begin a new project" %>
-    <% end %>
+      <%= project.submit "Begin a new project", :class => "submit_button" %>
+      <% end %>
+    </div>
+    <div class="existing_projects">
+      <p>Our projects</p>
 
-    <% @existing_projects.each do |project| %>
-      <%= link_to "#{Project.find(project[:id]).project_name}", login_path(:project_id => project[:id]), :method => :post %>
-    <% end %>
-
-    <%= Project.first.team_id %>
+      <% @existing_projects.each do |project| %>
+        <p><%= link_to "#{Project.find(project[:id]).project_name}", login_path(:project_id => project[:id]), :method => :post, :class =>"project_links" %></p>
+      <% end %>
+    </div>
   </body>
 </html>
