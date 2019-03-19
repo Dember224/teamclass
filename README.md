@@ -8,6 +8,8 @@ Rails 5.1.6
 
 Postgresql
 
+react-rails
+
 Just run bundle install
 
 Rake db:create
