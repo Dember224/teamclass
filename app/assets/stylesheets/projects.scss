@@ -38,4 +38,33 @@
 .working_on_info{
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
+  margin-top: 7%;
+}
+
+//navbar
+
+.navbar{
+  display: inline;
+  margin: 5%;
+  text-decoration: none;
+  color: #1EE613;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 22px;
+}
+
+a{
+  text-decoration: none;
+  color: #1EE613;
+}
+
+a:hover{
+  color: white;
+}
+
+nav{
+  text-align: center;
+  position: absolute;
+  top:0;
+  left:30%;
+  background-color: firebrick;
 }

@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <%= react_component("hello_react", props: {}, prerender: true) %>
+
   </head>
   <body>
-
+    <%= javascript_pack_tag "NavLinks" %>
 
     <div class="working_on_info">
       <p>Your Team: <%= @my_team_name %></p>
