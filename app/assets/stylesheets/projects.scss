@@ -8,7 +8,10 @@
 
 }
 
-
+.hello_react{
+  height: 25px;
+  width: 35px;
+}
 .existing_projects{
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
@@ -30,4 +33,9 @@
 .project_links:hover{
   color: white;
   background-color: #1EE613;
+}
+
+.working_on_info{
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
 }

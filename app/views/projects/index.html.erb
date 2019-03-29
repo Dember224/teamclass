@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <%= react_component("hello_react", props: {}, prerender: true) %>
   </head>
   <body>
-    <p>Your Team: <%= @my_team_name %></p>
-    <p>Working on the project: <%= @this_project.project_name %></p>
+
+
+    <div class="working_on_info">
+      <p>Your Team: <%= @my_team_name %></p>
+      <p>Working on the project: <%= @this_project.project_name %></p>
+    </div>
 
     <p>Your team Members:</p>
     <ol>
@@ -15,11 +20,23 @@
           <% @this_member = TeamMember.find_by_user_id(squad_member) %>
           <%= @this_member.user.first_name %>
           <%= @this_member.user.last_name %>
+          <% if Assignment.find_by_user_id(@this_member.user.id) %>
+             <p>Tasks Responsible for:</p>
+            <ol>
+              <li><%= Assignment.find_by_user_id(@this_member.user.id).assignment_description %> By:<%= Assignment.find_by_user_id(@this_member.user.id).assignment_deadline %> </li>
+            </ol>
+          <% end %>
+          <p>Materials Responsible for:</p>
+          <% if Material.find_by_user_id(@this_member.user.id) %>
+          <ol>
+            <li><%= Material.find_by_user_id(@this_member.user.id).material_name %></li>
+          </ol>
+          <% end %>
         </li>
       <% end %>
     </ol>
 
-    <a href="/assignments">Start assigning tasks</a>
-    <a href="/materials">List the materials you need to complete this project</a>
+    <a href="/assignments" class="project_links">Start assigning tasks</a>
+    <a href="/materials" class="project_links">List the materials you need to complete this project</a>
   </body>
 </html>
