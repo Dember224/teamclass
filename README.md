@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project management application designed for classroom settings. Intended to help students and instructors organize the dreaded group project. Holding group members accountable to one another and divying up work fairly. 
 
-Things you may want to cover:
+Ruby version 2.3.3
+ 
+Rails 5.1.6
 
-* Ruby version
+Postgresql
 
-* System dependencies
+react-rails
 
-* Configuration
+Just run bundle install
 
-* Database creation
+Rake db:create
 
-* Database initialization
+Rake db:migrate
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+(This project is still in developement)
