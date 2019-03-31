@@ -6,14 +6,14 @@ class TeamMembersController < ApplicationController
 
   def create
 
-    @team_member = TeamMember.new(team_member_params)
-    if @team_member.save
+    @team_members = TeamMember.new(team_member_params)
+    if @team_members.save
       redirect_to '/team_members'
     end
   end
 
   def index
-    @team_member = TeamMember.new
+    @team_members = TeamMember.new
     @team = Team.find_by_id(session[:team_id])
     @team_id = @team.id
     @team_name = @team.team_name

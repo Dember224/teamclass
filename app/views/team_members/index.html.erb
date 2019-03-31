@@ -11,23 +11,23 @@
   <h2>Team Members:</h2>
     <ol>
     <% @team_member.each do |member| %>
-      <li><%= TeamMember.find_by_team_id(member[:team_id]).user.first_name %><%= TeamMember.find_by_team_id(member[:team_id]).user.last_name %> </li>
+      <li><%= TeamMember.find_by_user_id(member[:user_id]).user.first_name %><%= TeamMember.find_by_user_id(member[:user_id]).user.last_name %> </li>
     <% end %>
     </ol>
     <p>Find New Members To add</p>
     <%= form_tag('/team_members', method: :get) do %>
-    Email: <%= text_field_tag :email, params[:email] %>
-    <%= submit_tag 'Search', name: nil, :class => "submit_button" %>
+      Email: <%= text_field_tag :email, params[:email] %>
+      <%= submit_tag 'Search', name: nil, :class => "submit_button" %>
     <% end %>
 
     <% if @user != false  %>
-    <% if @user == nil %>
-      We're sorry, we don't have any users with that email address
-    <% else %>
+      <% if @user == nil %>
+        We're sorry, we don't have any users with that email address
+      <% else %>
       <!-- The match form for adding to teams will go here -->
-      <%= @user.first_name %> <%= @user.last_name %>
+        <%= @user.first_name %> <%= @user.last_name %>
 
-      <%= form_for @team_member do |member| %>
+      <%= form_for @team_members do |member| %>
         <%= member.hidden_field :user_id, :value => @user.id %>
         <%= member.hidden_field :team_id, :value => @team_id %>
         <%= member.submit "Add Team Member", :class =>"submit_button" %>
