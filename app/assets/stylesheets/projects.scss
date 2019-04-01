@@ -23,10 +23,13 @@
 
 .project_links{
   text-decoration: none;
-  color:black;
+  color: #1EE613;
   font-family: 'Shadows Into Light', cursive;
   border:solid;
   border-color: #1EE613;
+  background-color: #2b296b;
+  display: block;
+  text-align: center;
 
 }
 
@@ -39,6 +42,8 @@
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
   margin-top: 7%;
+  background-color: firebrick;
+  color: white;
 }
 
 //navbar
@@ -65,6 +70,37 @@ nav{
   text-align: center;
   position: absolute;
   top:0;
-  left:30%;
+  background-color: #2b296b;
+  width: 100%;
+  height:12%;
+}
+
+.team_members{
   background-color: firebrick;
+  width: 30%;
+  color: white;
+  font-family: 'Shadows Into Light', cursive;
+  display: inline;
+  text-align: center;
+}
+
+.member_listings{
+  display: inline-block;
+  background-color: firebrick;
+  width: 30%;
+  font-family: 'Shadows Into Light', cursive;
+  margin-left: 12%;
+  margin-top: 5%;
+  margin-bottom:5%;
+}
+
+p{
+  display: inline;
+}
+
+ol{
+  display: inline;
+}
+li{
+  display:inline
 }
