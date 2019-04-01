@@ -13,31 +13,36 @@
       <p>Working on the project: <%= @this_project.project_name %></p>
     </div>
 
-
-      <% @squad_member.each do |squad_member| %>
+      <% @the_squad.each do |squad_member| %>
 
           <% @this_member = TeamMember.find_by_user_id(squad_member) %>
           <!--This will only prevent teams with no users. The else portion won't run for each not present users-->
           <% if Assignment.find_by_user_id(@this_member.user.id) %>
             <% @description = Assignment.where(user_id: @this_member.user.id).pluck(:assignment_description) %>
-            <% @deadline =  Assignment.find_by_user_id(@this_member.user.id).assignment_deadline %>
+            <% @deadline =  Assignment.find_by_assignment_description(@description).assignment_deadline %>
           <% else %>
             <% @description = "This group member is not currently assigned to any tasks" %>
             <% @deadline = "" %>
           <% end %>
-          <%= react_component("TeamMember", {first_name: @this_member.user.first_name, last_name: @this_member.user.last_name, description: @description, deadline: @deadline}, {class: "member_listings"}) %>
 
           <!-- Placing materials here -->
           <% if Material.find_by_user_id(@this_member.user.id) %>
-          <ol>
-            <li><%= Material.find_by_user_id(@this_member.user.id).material_name %></li>
-          </ol>
+
+            <% @material = Material.find_by_user_id(@this_member.user.id).material_name %>
+
+          <% else %>
+            <% @material = "" %>
           <% end %>
+          <%= react_component("TeamMember", {first_name: @this_member.user.first_name, last_name: @this_member.user.last_name, description: @description, deadline: @deadline, material: @material}, {class: "member_listings"}) %>
+
+
 
       <% end %>
 
 
     <a href="/assignments" class="project_links">Start assigning tasks</a>
     <a href="/materials" class="project_links">List the materials you need to complete this project</a>
+
+    <%= react_component("Footer") %>
   </body>
 </html>
