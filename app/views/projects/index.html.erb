@@ -13,7 +13,10 @@
       <p>Working on the project: <%= @this_project.project_name %></p>
     </div>
 
+    <div class="center_stage">
       <% @the_squad.each do |squad_member| %>
+
+          <!--Will refactor logic into helper methods once finished -->
 
           <% @this_member = TeamMember.find_by_user_id(squad_member) %>
           <!--This will only prevent teams with no users. The else portion won't run for each not present users-->
@@ -43,6 +46,7 @@
     <a href="/assignments" class="project_links">Start assigning tasks</a>
     <a href="/materials" class="project_links">List the materials you need to complete this project</a>
 
+    </div>
     <%= react_component("Footer") %>
   </body>
 </html>

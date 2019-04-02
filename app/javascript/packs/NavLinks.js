@@ -14,7 +14,12 @@ export class NavLinks extends React.Component {
       )
     });
 
-    return <nav>{pageLinks}</nav>;
+    return(
+      <nav>
+        <a href="/" className="nav_logo">TeamClass</a>
+        {pageLinks}
+      </nav>
+    );
   }
 }
 
