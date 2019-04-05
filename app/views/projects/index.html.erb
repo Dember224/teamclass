@@ -21,11 +21,9 @@
           <% @this_member = TeamMember.find_by_user_id(squad_member) %>
           <!--This will only prevent teams with no users. The else portion won't run for each not present users-->
           <% if Assignment.find_by_user_id(@this_member.user.id) %>
-            <% @description = Assignment.where(user_id: @this_member.user.id).pluck(:assignment_description) %>
-            <% @deadline =  Assignment.find_by_assignment_description(@description).assignment_deadline %>
+            <% @description = Assignment.where(user_id: @this_member.user.id).pluck(:assignment_description, :assignment_deadline) %>
           <% else %>
-            <% @description = "This group member is not currently assigned to any tasks" %>
-            <% @deadline = "" %>
+            <% @description = ["This group member is not currently assigned to any tasks", ""] %>
           <% end %>
 
           <!-- Placing materials here -->
@@ -36,7 +34,7 @@
           <% else %>
             <% @material = "" %>
           <% end %>
-          <%= react_component("TeamMember", {first_name: @this_member.user.first_name, last_name: @this_member.user.last_name, description: @description, deadline: @deadline, material: @material}, {class: "member_listings"}) %>
+          <%= react_component("TeamMember", {first_name: @this_member.user.first_name, last_name: @this_member.user.last_name, description: @description,  material: @material}, {class: "member_listings"}) %>
 
 
 

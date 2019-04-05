@@ -116,6 +116,20 @@ nav{
   margin-bottom:5%;
 }
 
+.member_button{
+  color: white;
+  border: solid;
+  border-color:white;
+  text-align: center;
+}
+
+.member_button:hover{
+  color:firebrick;
+  background-color: white;
+  border-color:firebrick;
+  cursor:pointer;
+}
+
 //center positioning
 .center_stage{
   background-color: #CDCDCD;
@@ -128,6 +142,12 @@ ol{
 }
 li{
   display:inline
+}
+
+//hide members display CSS
+
+.hide_members{
+  display:none;
 }
 
 //Footer
