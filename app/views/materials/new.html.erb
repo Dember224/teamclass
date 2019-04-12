@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <%= form_for @materials do |material| %>
+    <%= form_for @materials, remote: true do |material| %>
       <%= material.hidden_field :project_id, :value => @this_project.id %>
       <p>Name of the material</p>
       <%= material.text_field :material_name %>

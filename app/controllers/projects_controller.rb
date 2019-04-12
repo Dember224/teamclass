@@ -22,7 +22,8 @@ class ProjectsController < ApplicationController
     @this_project = Project.find(session[:project_id])
     @my_team_name = @this_project.team.team_name
     @the_squad = TeamMember.where("team_id = ?", @this_project.team_id).pluck(:user_id)
-    
+    #create an array of arrays with first_name as 0, last name as 1, user id as 2
+    @current_team = User.where({id: @the_squad}).pluck(:first_name, :last_name, :id)
   end
 
   private

@@ -37,13 +37,16 @@
           <%= react_component("TeamMember", {first_name: @this_member.user.first_name, last_name: @this_member.user.last_name, description: @description,  material: @material}, {class: "member_listings"}) %>
 
 
-
       <% end %>
 
+        <%= react_component("PostMaterials", {project_id: @this_project.id, userInfo: @current_team}) %>
 
     <a href="/assignments" class="project_links">Start assigning tasks</a>
     <a href="/materials" class="project_links">List the materials you need to complete this project</a>
-
+      <!--React component with materials form goes here "PostMaterials" must pass all group members from this project as props
+      as well as the project_id and each team_members user ID. Going to just handle materials and assignments all from the same
+      view page. Rerouting all over the site would get annoying for users.
+     -->
     </div>
     <%= react_component("Footer") %>
   </body>

@@ -12,9 +12,8 @@ class MaterialsController < ApplicationController
 
   def create
     @materials = Material.new(material_params)
-    if @materials.save
-      redirect_to '/our_project'
-    end
+     @materials.save
+      
   end
 
   private
