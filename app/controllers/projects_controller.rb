@@ -18,6 +18,9 @@ class ProjectsController < ApplicationController
     end
 
     @material = Material.new(material_params)
+    @material.save
+    @assignment = Assignment.new(assignment_params)
+    @assignment.save
   end
 
   def index
@@ -27,6 +30,7 @@ class ProjectsController < ApplicationController
     #create an array of arrays with first_name as 0, last name as 1, user id as 2
     @current_team = User.where({id: @the_squad}).pluck(:first_name, :last_name, :id)
     @material = Material.new
+    @assignment = Assignment.new
   end
 
   private
@@ -37,6 +41,10 @@ class ProjectsController < ApplicationController
 
   def material_params
     params.require(:material).permit(:project_id, :material_name, :material_purpose, :cost, :user_id, :has_or_is_acquiring)
+  end
+
+  def assignment_params
+    params.require(:assignment).permit(:project_id, :user_id, :assignment_deadline, :assignment_description)
   end
 
 end

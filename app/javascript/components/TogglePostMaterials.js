@@ -8,7 +8,7 @@ export class TogglePostMaterials extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div className="project_links" onClick={this.props.onClick}>List the materials you need to complete this project</div>
+        <div className="project_links" onClick={this.props.onClick}>{this.props.toggleButton}</div>
       </React.Fragment>
     );
   }

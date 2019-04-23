@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Assign tasks necessary to complete your project</h1>
-    <%= form_for @assignment do |assignment| %>
+    <%= form_for @assignment, remote: true do |assignment| %>
      <p> Who is responsible for completing this part of the project?
       <%= assignment.hidden_field :project_id, :value => @this_project.id %>
       <%  @member_user_id.each do |user| %>
@@ -15,7 +15,7 @@
         <%= assignment.radio_button(:user_id, user) %>
       <% end %>
       <%= assignment.datetime_field :assignment_deadline %>
-      <%= assignment.text_area :assignment_description %>
+      <%= assignment.text_area :assignment_description, size: "30X10" %>
 
       <%= assignment.submit "Assign this task" %>
     <% end %>

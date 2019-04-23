@@ -29,7 +29,7 @@ export class PostMaterials extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <TogglePostMaterials onClick={this.toggleDisplay}/ >
+        <TogglePostMaterials onClick={this.toggleDisplay} toggleButton="List the materials you need to complete this project"/ >
         <div className={this.state.display}>
           <form className="new_material" id="new_material" action="/materials" accept-charset="UTF-8" data-remote="true" method="post">
           <input name="utf8" type="hidden" value="&#x2713;" />
