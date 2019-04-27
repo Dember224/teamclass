@@ -156,6 +156,37 @@ li{
 
 }
 
+//assignment form
+
+.assignment_text_area {
+  display: block;
+  margin:auto;
+  height: 200px;
+  width: 400px;
+}
+
+.assignment_date_field{
+  display: block;
+  margin:auto;
+}
+
+.assignment_submit{
+  background-color: #2b296b;
+  color: #1EE613;
+  border-color: #1EE613;
+  font-family: 'Shadows Into Light', cursive;
+  margin-bottom: 2%;
+  height: 40px;
+  width: 150px;
+
+}
+
+.assignment_submit:hover{
+  background-color: #1EE613;
+  color: white;
+  cursor: pointer;
+}
+
 //hide members display CSS
 
 .hide_members{

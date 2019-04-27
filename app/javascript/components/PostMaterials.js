@@ -44,7 +44,7 @@ export class PostMaterials extends React.Component {
           <p>Team Member responsible for acquiring material</p>
             <InputMaterials userInfo={this.props.userInfo} />
 
-          <input type="submit" name="commit" value="Add this material" data-disable-with="Add this material" />
+          <input type="submit" name="commit" value="Add this material" data-disable-with="Add this material" class="assignment_submit" />
         </form>
         </div>
 

@@ -39,16 +39,16 @@ class PostAssignments extends React.Component {
           <InputAssignments userInfo={this.props.userInfo} />
           <p>
             When is this portion of the project due?
-            <input type="datetime-local" name="assignment[assignment_deadline]" id="assignment_assignment_deadline" />
+            <input type="datetime-local" name="assignment[assignment_deadline]" id="assignment_assignment_deadline" class="assignment_date_field"/>
           </p>
 
           <p>
             Describe the assignment and it's responsibilities.
-            <textarea name="assignment[assignment_description]" id="assignment_assignment_description" cols="30X10">
+            <textarea name="assignment[assignment_description]" id="assignment_assignment_description" class="assignment_text_area">
             </textarea>
           </p>
 
-          <input type="submit" name="commit" value="Assign this task" data-disable-with="Assign this task" />
+          <input type="submit" name="commit" value="Assign this task" data-disable-with="Assign this task" class="assignment_submit" />
         </form>
         </div>
       </React.Fragment>
