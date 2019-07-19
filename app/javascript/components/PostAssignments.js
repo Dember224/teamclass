@@ -30,8 +30,8 @@ class PostAssignments extends React.Component {
     return (
       <React.Fragment>
         <TogglePostMaterials onClick={this.toggleDisplay} toggleButton="Start Assigning Tasks"/>
-        <div class={this.state.display} >
-          <form class="new_assignment" id="new_assignment" action="/assignments" accept-charset="UTF-8" data-remote="true" method="post">
+        <div className={this.state.display} >
+          <form className="new_assignment" id="new_assignment" action="/assignments" acceptCharset="UTF-8" data-remote="true" method="post">
 
           <input name="utf8" type="hidden" value="&#x2713;" />
           <p> Who is responsible for completing this part of the project?</p>
@@ -39,16 +39,16 @@ class PostAssignments extends React.Component {
           <InputAssignments userInfo={this.props.userInfo} />
           <p>
             When is this portion of the project due?
-            <input type="datetime-local" name="assignment[assignment_deadline]" id="assignment_assignment_deadline" class="assignment_date_field"/>
+            <input type="datetime-local" name="assignment[assignment_deadline]" id="assignment_assignment_deadline" className="assignment_date_field"/>
           </p>
 
           <p>
             Describe the assignment and it's responsibilities.
-            <textarea name="assignment[assignment_description]" id="assignment_assignment_description" class="assignment_text_area">
+            <textarea name="assignment[assignment_description]" id="assignment_assignment_description" className="assignment_text_area">
             </textarea>
           </p>
 
-          <input type="submit" name="commit" value="Assign this task" data-disable-with="Assign this task" class="assignment_submit" />
+          <input type="submit" name="commit" value="Assign this task" data-disable-with="Assign this task" className="assignment_submit" />
         </form>
         </div>
       </React.Fragment>

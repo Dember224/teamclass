@@ -31,7 +31,7 @@ export class PostMaterials extends React.Component {
       <React.Fragment>
         <TogglePostMaterials onClick={this.toggleDisplay} toggleButton="List the materials you need to complete this project"/ >
         <div className={this.state.display}>
-          <form className="new_material" id="new_material" action="/materials" accept-charset="UTF-8" data-remote="true" method="post">
+          <form className="new_material" id="new_material" action="/materials" acceptCharset="UTF-8" data-remote="true" method="post">
           <input name="utf8" type="hidden" value="&#x2713;" />
           <input value={this.props.project_id} type="hidden" name="material[project_id]" id="material_project_id" />
           <p>Name of the material</p>
@@ -44,7 +44,7 @@ export class PostMaterials extends React.Component {
           <p>Team Member responsible for acquiring material</p>
             <InputMaterials userInfo={this.props.userInfo} />
 
-          <input type="submit" name="commit" value="Add this material" data-disable-with="Add this material" class="assignment_submit" />
+          <input type="submit" name="commit" value="Add this material" data-disable-with="Add this material" className="assignment_submit" />
         </form>
         </div>
 

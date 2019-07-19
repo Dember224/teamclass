@@ -6,8 +6,7 @@ export class Assignments extends React.Component {
     const assignments = description.map(assignment =>{
       return (
         <React.Fragment>
-          <p>Responsible for:</p>
-          <p>{assignment[0]}</p>
+          <p className="assignment_display">{assignment[0]}</p>
           <p>Due for completion by: {assignment[1]}</p>
         </React.Fragment>
       );

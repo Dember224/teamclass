@@ -34,7 +34,7 @@ toggleDisplay(){
         <div>
           <MemberDisplay first_name={this.props.first_name} last_name={this.props.last_name} onClick={this.toggleDisplay}/>
           <div className={this.state.display}>
-            <p>{this.props.first_name} {this.props.last_name}</p>
+            <p>Responsibilities include:</p>
             <Assignments description ={this.props.description} deadline ={this.props.deadline} className="team_members" />
             <p>Responsible for the following materials:</p>
             <Materials material={this.props.material} />
