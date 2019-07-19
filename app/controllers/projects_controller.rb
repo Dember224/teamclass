@@ -31,6 +31,15 @@ class ProjectsController < ApplicationController
     @current_team = User.where({id: @the_squad}).pluck(:first_name, :last_name, :id)
     @material = Material.new
     @assignment = Assignment.new
+    @all_materials = Material.where("project_id = ?", @this_project.id)
+
+    @every_material = []
+
+    @all_materials.each do |material|
+      @material_list = [material["material_name"], material["material_purpose"], material["cost"]]
+      @every_material.push(@material_list)
+    end
+
   end
 
   private

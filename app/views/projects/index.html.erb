@@ -42,7 +42,7 @@
         <%= react_component("PostMaterials", {project_id: @this_project.id, userInfo: @current_team}) %>
         <%= react_component("PostAssignments", {project_id: @this_project.id, userInfo: @current_team}) %>
 
-  
+        <%= react_component("ListAllMaterials", {materials: @every_material}) %>
 
       <!--React component with materials form goes here "PostMaterials" must pass all group members from this project as props
       as well as the project_id and each team_members user ID. Going to just handle materials and assignments all from the same
